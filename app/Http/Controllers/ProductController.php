@@ -14,8 +14,9 @@ class ProductController extends Controller
     }
 
     public function findProducts($name)
-    {
-       // dd(Product::where('name' , '%LIKE%', $name)->get());
+    {    
+        // για την παρουσίαση τραβάμε απο την βάση.
+        // όταν Skroutz και Bestbuy(δεν έχει ακόμα) θα ανοίξουν το API θα τραβάμε απο εκεί
         return response()->json(Product::with('categories')->where('name' , 'LIKE', '%'.$name.'%')->get());
     }
 

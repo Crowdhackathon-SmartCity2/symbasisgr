@@ -20,5 +20,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('products',  ['uses' => 'ProductController@showAllProducts']);
   
     $router->get('products/{name}', ['uses' => 'ProductController@findProducts']);
+      
+    $router->get('kimdis/{adam}', ['uses' => 'KimdisController@findAdam']);
   
   });
